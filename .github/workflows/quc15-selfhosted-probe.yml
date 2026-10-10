@@ -1,0 +1,12 @@
+# Phép thử QUC-15: billing lock có chặn cả self-hosted runner không?
+# Không cài runner nào. Nếu GitHub xếp job vào hàng chờ (queued) thì lock KHÔNG chặn
+# self-hosted; nếu job đỏ ngay với annotation billing thì self-hosted cũng vô dụng.
+name: QUC-15 self-hosted probe
+on:
+  workflow_dispatch:
+jobs:
+  probe:
+    runs-on: [self-hosted, quc15-khong-ton-tai]
+    timeout-minutes: 2
+    steps:
+      - run: echo "khong bao gio chay"
