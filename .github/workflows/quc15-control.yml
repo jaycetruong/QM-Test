@@ -1,0 +1,9 @@
+name: QUC-15 control test
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "runner allocated at $(date -u) on $RUNNER_OS"
